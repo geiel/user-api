@@ -1,34 +1,18 @@
-package com.geielpeguero.userapi.model;
+package com.geielpeguero.userapi.model.dto;
 
-import javax.persistence.*;
+import com.geielpeguero.userapi.model.Phone;
+
 import java.util.List;
-import java.util.UUID;
 
-@Table(name = "users")
-@Entity
-public class User {
-
-    @Id
-    @GeneratedValue
-    private UUID id;
+public class UserDto {
 
     private String name;
 
-    @Column(unique = true)
     private String email;
 
     private String password;
 
-    @OneToMany(mappedBy = "user")
-    private List<Phone> phones;
-
-    public UUID getId() {
-        return id;
-    }
-
-    public void setId(UUID id) {
-        this.id = id;
-    }
+    private List<PhoneDto> phones;
 
     public String getName() {
         return name;
@@ -54,11 +38,11 @@ public class User {
         this.password = password;
     }
 
-    public List<Phone> getPhones() {
+    public List<PhoneDto> getPhones() {
         return phones;
     }
 
-    public void setPhones(List<Phone> phones) {
+    public void setPhones(List<PhoneDto> phones) {
         this.phones = phones;
     }
 }

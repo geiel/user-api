@@ -10,8 +10,10 @@ public class Phone {
     @GeneratedValue
     private Long id;
 
+    @Column(name = "city_code")
     private Integer cityCode;
 
+    @Column(name = "country_code")
     private Integer countryCode;
 
     @ManyToOne
