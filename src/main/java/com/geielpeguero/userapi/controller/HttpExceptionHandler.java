@@ -1,6 +1,6 @@
 package com.geielpeguero.userapi.controller;
 
-import com.geielpeguero.userapi.exeption.UserAPIException;
+import com.geielpeguero.userapi.exception.UserAPIException;
 import com.geielpeguero.userapi.model.ExceptionMessage;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

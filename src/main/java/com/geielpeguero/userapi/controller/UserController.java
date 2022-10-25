@@ -6,11 +6,9 @@ import com.geielpeguero.userapi.service.UserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/user")
 public class UserController {
 
     private final UserService userService;
@@ -19,7 +17,7 @@ public class UserController {
         this.userService = userService;
     }
 
-    @PostMapping
+    @PostMapping("/register")
     public ResponseEntity<User> createUser(@RequestBody UserDto userDto) {
         User user = userService.saveUser(userDto);
 

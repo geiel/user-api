@@ -1,4 +1,4 @@
-package com.geielpeguero.userapi.exeption;
+package com.geielpeguero.userapi.exception;
 
 import com.geielpeguero.userapi.model.ExceptionMessage;
 
