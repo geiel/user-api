@@ -2,6 +2,7 @@ package com.geielpeguero.userapi.controller;
 
 import com.geielpeguero.userapi.model.User;
 import com.geielpeguero.userapi.model.dto.UserDto;
+import com.geielpeguero.userapi.model.response.UserRegisterResponse;
 import com.geielpeguero.userapi.service.UserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,10 +19,10 @@ public class UserController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<User> createUser(@RequestBody UserDto userDto) {
-        User user = userService.saveUser(userDto);
+    public ResponseEntity<UserRegisterResponse> createUser(@RequestBody UserDto userDto) {
+        UserRegisterResponse response = userService.saveUser(userDto);
 
-        return ResponseEntity.ok(user);
+        return ResponseEntity.ok(response);
     }
 
 }

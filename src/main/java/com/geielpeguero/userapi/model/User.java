@@ -1,6 +1,7 @@
 package com.geielpeguero.userapi.model;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -21,6 +22,12 @@ public class User {
 
     @OneToMany(mappedBy = "user")
     private List<Phone> phones;
+
+    private Date created;
+
+    private Date modified;
+
+    private Boolean isActive;
 
     public UUID getId() {
         return id;
@@ -60,5 +67,29 @@ public class User {
 
     public void setPhones(List<Phone> phones) {
         this.phones = phones;
+    }
+
+    public Date getCreated() {
+        return created;
+    }
+
+    public void setCreated(Date created) {
+        this.created = created;
+    }
+
+    public Date getModified() {
+        return modified;
+    }
+
+    public void setModified(Date modified) {
+        this.modified = modified;
+    }
+
+    public Boolean getActive() {
+        return isActive;
+    }
+
+    public void setActive(Boolean active) {
+        isActive = active;
     }
 }
