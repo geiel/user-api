@@ -1,10 +1,27 @@
 package com.geielpeguero.userapi.model.dto;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
+
 public class PhoneDto {
 
+    @Pattern(regexp = "^\\d*$", message = "tiene que ser un numero")
+    @NotBlank(message = "no puede estar vacio")
+    private String number;
+
+    @NotBlank(message = "no puede estar vacio")
     private String cityCode;
 
+    @NotBlank(message = "no puede estar vacio")
     private String countryCode;
+
+    public String getNumber() {
+        return number;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
+    }
 
     public String getCityCode() {
         return cityCode;

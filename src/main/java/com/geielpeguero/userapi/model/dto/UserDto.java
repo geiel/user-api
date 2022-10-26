@@ -1,18 +1,25 @@
 package com.geielpeguero.userapi.model.dto;
 
-import com.geielpeguero.userapi.model.Phone;
+import org.springframework.validation.annotation.Validated;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
 import java.util.List;
 
 public class UserDto {
 
+    @NotBlank(message = "no puede estar vacio")
     private String name;
 
+    @NotBlank(message = "no puede estar vacio")
+    @Pattern(regexp = "^[\\w-.]+@([\\w-]+\\.)+[\\w-]{2,4}$", message = "invalido")
     private String email;
 
+    @NotBlank(message = "no puede estar vacio")
     private String password;
 
-    private List<PhoneDto> phones;
+    private List<@Valid PhoneDto> phones;
 
     public String getName() {
         return name;
